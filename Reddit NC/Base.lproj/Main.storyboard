@@ -1,25 +1,214 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTH-qc-PsT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Reddit NC-->
+        <scene sceneID="mUe-bM-tbS">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="9Kg-pr-wJT" customClass="MainViewController" customModule="Reddit_NC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LjZ-fX-MYf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Instructions" id="0uQ-Sn-5Uj">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1ev-gy-HfD">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ev-gy-HfD" id="MLW-cE-4Xp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Subreddit Selection" id="kVN-C4-fxT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="yOw-kC-2cl" userLabel="Subreddit Cell 1">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOw-kC-2cl" id="BkW-jQ-p6s">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-aF-gpk" userLabel="Switch 1">
+                                                    <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yvd-9o-pk6" userLabel="Text Field 1">
+                                                    <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tZV-aF-gpk" firstAttribute="trailing" secondItem="BkW-jQ-p6s" secondAttribute="trailingMargin" id="Ge5-s4-LC5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yvd-9o-pk6" secondAttribute="bottom" constant="6" id="Pdn-N2-MXI"/>
+                                                <constraint firstItem="yvd-9o-pk6" firstAttribute="leading" secondItem="BkW-jQ-p6s" secondAttribute="leadingMargin" id="QJx-sQ-teB"/>
+                                                <constraint firstItem="yvd-9o-pk6" firstAttribute="top" secondItem="BkW-jQ-p6s" secondAttribute="topMargin" constant="6" id="Y6a-n3-Bwr"/>
+                                                <constraint firstItem="tZV-aF-gpk" firstAttribute="top" secondItem="BkW-jQ-p6s" secondAttribute="topMargin" constant="5" id="aTc-xr-nEU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tZV-aF-gpk" secondAttribute="bottom" constant="6" id="lYf-B1-TQi"/>
+                                                <constraint firstItem="tZV-aF-gpk" firstAttribute="leading" secondItem="yvd-9o-pk6" secondAttribute="trailing" constant="22" id="u2x-4U-KHY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="lGH-pR-c5i" userLabel="Subreddit Cell 2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGH-pR-c5i" id="QFb-5H-plu">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-B3-n3I" userLabel="Switch 2">
+                                                    <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n4i-4v-Qzu" userLabel="Text Field 2">
+                                                    <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="n4i-4v-Qzu" firstAttribute="top" secondItem="QFb-5H-plu" secondAttribute="topMargin" constant="6" id="5FY-HA-ZkF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2Hg-B3-n3I" secondAttribute="bottom" constant="6" id="VM6-dQ-pFu"/>
+                                                <constraint firstItem="n4i-4v-Qzu" firstAttribute="leading" secondItem="QFb-5H-plu" secondAttribute="leadingMargin" id="c3f-Yg-pgC"/>
+                                                <constraint firstItem="2Hg-B3-n3I" firstAttribute="top" secondItem="QFb-5H-plu" secondAttribute="topMargin" constant="5" id="gkv-zA-hcR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n4i-4v-Qzu" secondAttribute="bottom" constant="6" id="kY4-Z2-wc9"/>
+                                                <constraint firstItem="2Hg-B3-n3I" firstAttribute="leading" secondItem="n4i-4v-Qzu" secondAttribute="trailing" constant="22" id="nUP-oq-pSh"/>
+                                                <constraint firstItem="2Hg-B3-n3I" firstAttribute="trailing" secondItem="QFb-5H-plu" secondAttribute="trailingMargin" id="xCz-Ih-GGw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="BGy-Ci-cX4" userLabel="Subreddit Cell 3">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGy-Ci-cX4" id="Se6-XE-ykD">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-1k-f8e" userLabel="Switch 3">
+                                                    <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SJg-7a-cUd" userLabel="Text Field 3">
+                                                    <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eVX-1k-f8e" firstAttribute="trailing" secondItem="Se6-XE-ykD" secondAttribute="trailingMargin" id="89F-Nx-xsV"/>
+                                                <constraint firstItem="eVX-1k-f8e" firstAttribute="leading" secondItem="SJg-7a-cUd" secondAttribute="trailing" constant="22" id="E2J-JP-R1j"/>
+                                                <constraint firstItem="SJg-7a-cUd" firstAttribute="top" secondItem="Se6-XE-ykD" secondAttribute="topMargin" constant="6" id="GWX-Dp-gsU"/>
+                                                <constraint firstItem="eVX-1k-f8e" firstAttribute="top" secondItem="Se6-XE-ykD" secondAttribute="topMargin" constant="5" id="ODV-0e-6n3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SJg-7a-cUd" secondAttribute="bottom" constant="6" id="ose-OW-qYx"/>
+                                                <constraint firstItem="SJg-7a-cUd" firstAttribute="leading" secondItem="Se6-XE-ykD" secondAttribute="leadingMargin" id="pFW-1j-Y2r"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eVX-1k-f8e" secondAttribute="bottom" constant="6" id="qx6-gQ-Qp9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="pZb-2M-LFE" userLabel="Subreddit Cell 4">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZb-2M-LFE" id="gsZ-9Y-daw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gMc-ZS-DmU" userLabel="Switch 4">
+                                                    <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8CH-kl-pVV" userLabel="Text Field 4">
+                                                    <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8CH-kl-pVV" secondAttribute="bottom" constant="6" id="F1h-18-Rv2"/>
+                                                <constraint firstItem="8CH-kl-pVV" firstAttribute="leading" secondItem="gsZ-9Y-daw" secondAttribute="leadingMargin" id="MfO-rP-5yx"/>
+                                                <constraint firstItem="gMc-ZS-DmU" firstAttribute="trailing" secondItem="gsZ-9Y-daw" secondAttribute="trailingMargin" id="MwR-C9-lN6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gMc-ZS-DmU" secondAttribute="bottom" constant="6" id="X6l-1X-bsW"/>
+                                                <constraint firstItem="gMc-ZS-DmU" firstAttribute="leading" secondItem="8CH-kl-pVV" secondAttribute="trailing" constant="22" id="k82-LI-cZS"/>
+                                                <constraint firstItem="8CH-kl-pVV" firstAttribute="top" secondItem="gsZ-9Y-daw" secondAttribute="topMargin" constant="6" id="qJf-Yp-v8H"/>
+                                                <constraint firstItem="gMc-ZS-DmU" firstAttribute="top" secondItem="gsZ-9Y-daw" secondAttribute="topMargin" constant="5" id="yEY-gh-Aj2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="oef-JV-If5" userLabel="Subreddit Cell 5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oef-JV-If5" id="Zau-pY-rpj">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-B8-DXq" userLabel="Switch 5">
+                                                    <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eS5-q4-wAV" userLabel="Text Field 5">
+                                                    <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NsG-B8-DXq" firstAttribute="trailing" secondItem="Zau-pY-rpj" secondAttribute="trailingMargin" id="3hG-vc-zKL"/>
+                                                <constraint firstItem="NsG-B8-DXq" firstAttribute="leading" secondItem="eS5-q4-wAV" secondAttribute="trailing" constant="22" id="4jx-8z-TNv"/>
+                                                <constraint firstItem="eS5-q4-wAV" firstAttribute="leading" secondItem="Zau-pY-rpj" secondAttribute="leadingMargin" id="5Db-N7-4QP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eS5-q4-wAV" secondAttribute="bottom" constant="6" id="7kt-0O-RPt"/>
+                                                <constraint firstItem="NsG-B8-DXq" firstAttribute="top" secondItem="Zau-pY-rpj" secondAttribute="topMargin" constant="5" id="ezp-tX-e0C"/>
+                                                <constraint firstItem="eS5-q4-wAV" firstAttribute="top" secondItem="Zau-pY-rpj" secondAttribute="topMargin" constant="6" id="rmK-ic-hQW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NsG-B8-DXq" secondAttribute="bottom" constant="6" id="tSe-G4-KDO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="9Kg-pr-wJT" id="Woc-Oh-HBI"/>
+                            <outlet property="delegate" destination="9Kg-pr-wJT" id="pMv-De-lW2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reddit NC" id="30f-8A-MZW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FDT-RO-wH7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputFields" destination="eS5-q4-wAV" id="l1R-nM-NV0"/>
+                        <outlet property="subredditInputFields" destination="eS5-q4-wAV" id="QhJ-8f-5vb"/>
+                        <outletCollection property="subredditTableViewCells" destination="yOw-kC-2cl" collectionClass="NSMutableArray" id="bbX-oQ-1Rt"/>
+                        <outletCollection property="subredditTableViewCells" destination="lGH-pR-c5i" collectionClass="NSMutableArray" id="nhC-he-5Kc"/>
+                        <outletCollection property="subredditTableViewCells" destination="BGy-Ci-cX4" collectionClass="NSMutableArray" id="uLA-4I-3RN"/>
+                        <outletCollection property="subredditTableViewCells" destination="pZb-2M-LFE" collectionClass="NSMutableArray" id="kxz-2B-M7y"/>
+                        <outletCollection property="subredditTableViewCells" destination="oef-JV-If5" collectionClass="NSMutableArray" id="bjn-zT-GiW"/>
+                        <outletCollection property="subredditUISwitches" destination="tZV-aF-gpk" collectionClass="NSMutableArray" id="vrZ-r2-tcV"/>
+                        <outletCollection property="subredditUISwitches" destination="2Hg-B3-n3I" collectionClass="NSMutableArray" id="vt9-QJ-tyB"/>
+                        <outletCollection property="subredditUISwitches" destination="eVX-1k-f8e" collectionClass="NSMutableArray" id="wOc-i9-rs5"/>
+                        <outletCollection property="subredditUISwitches" destination="gMc-ZS-DmU" collectionClass="NSMutableArray" id="b5l-FZ-aM1"/>
+                        <outletCollection property="subredditUISwitches" destination="NsG-B8-DXq" collectionClass="NSMutableArray" id="Plo-f3-GXl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIZ-61-xvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1909" y="271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JUj-Je-Qmv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTH-qc-PsT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uzu-IB-eiT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Kg-pr-wJT" kind="relationship" relationship="rootViewController" id="5A7-HV-IyT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pR8-sa-DfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="271"/>
         </scene>
     </scenes>
 </document>

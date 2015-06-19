@@ -8,8 +8,26 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    //MARK: Global Variables
+    
+    var subredditArray: [String] = []
 
+    
+    //MARK: IBOutletCollections
+    
+    @IBOutlet var subredditTableViewCells: [UITableViewCell]!
+    
+    @IBOutlet var subredditInputFields: UITextField!
+    
+    @IBOutlet var subredditUISwitches: [UISwitch]!
+    
+    //MARK: IBActions
+    
+    
+    //MARK: Default functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
