@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		527A9E411B34C91D0095BCD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A9E401B34C91D0095BCD4 /* AppDelegate.swift */; };
-		527A9E431B34C91D0095BCD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A9E421B34C91D0095BCD4 /* ViewController.swift */; };
+		527A9E431B34C91D0095BCD4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A9E421B34C91D0095BCD4 /* MainViewController.swift */; };
 		527A9E461B34C91D0095BCD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E441B34C91D0095BCD4 /* Main.storyboard */; };
 		527A9E481B34C91D0095BCD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E471B34C91D0095BCD4 /* Images.xcassets */; };
 		527A9E4B1B34C91D0095BCD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E491B34C91D0095BCD4 /* LaunchScreen.xib */; };
@@ -29,7 +29,7 @@
 		527A9E3B1B34C91D0095BCD4 /* Reddit NC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit NC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527A9E3F1B34C91D0095BCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527A9E401B34C91D0095BCD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		527A9E421B34C91D0095BCD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		527A9E421B34C91D0095BCD4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		527A9E451B34C91D0095BCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		527A9E471B34C91D0095BCD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		527A9E4A1B34C91D0095BCD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				527A9E401B34C91D0095BCD4 /* AppDelegate.swift */,
-				527A9E421B34C91D0095BCD4 /* ViewController.swift */,
+				527A9E421B34C91D0095BCD4 /* MainViewController.swift */,
 				527A9E441B34C91D0095BCD4 /* Main.storyboard */,
 				527A9E471B34C91D0095BCD4 /* Images.xcassets */,
 				527A9E491B34C91D0095BCD4 /* LaunchScreen.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527A9E431B34C91D0095BCD4 /* ViewController.swift in Sources */,
+				527A9E431B34C91D0095BCD4 /* MainViewController.swift in Sources */,
 				527A9E411B34C91D0095BCD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +411,7 @@
 				527A9E5C1B34C91D0095BCD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		527A9E5D1B34C91D0095BCD4 /* Build configuration list for PBXNativeTarget "Reddit NCTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				527A9E5F1B34C91D0095BCD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
