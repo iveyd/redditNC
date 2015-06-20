@@ -34,6 +34,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-aF-gpk" userLabel="Switch 1">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchOne:" destination="9Kg-pr-wJT" eventType="valueChanged" id="mh9-2b-h1k"/>
+                                                    </connections>
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yvd-9o-pk6" userLabel="Text Field 1">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
@@ -51,6 +54,7 @@
                                                 <constraint firstItem="tZV-aF-gpk" firstAttribute="leading" secondItem="yvd-9o-pk6" secondAttribute="trailing" constant="22" id="u2x-4U-KHY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019607843142" green="0.92156862745098034" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="lGH-pR-c5i" userLabel="Subreddit Cell 2">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -60,6 +64,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-B3-n3I" userLabel="Switch 2">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchTwo:" destination="9Kg-pr-wJT" eventType="valueChanged" id="LxQ-xy-0Dy"/>
+                                                    </connections>
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n4i-4v-Qzu" userLabel="Text Field 2">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
@@ -77,6 +84,7 @@
                                                 <constraint firstItem="2Hg-B3-n3I" firstAttribute="trailing" secondItem="QFb-5H-plu" secondAttribute="trailingMargin" id="xCz-Ih-GGw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="BGy-Ci-cX4" userLabel="Subreddit Cell 3">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -86,6 +94,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-1k-f8e" userLabel="Switch 3">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchThree:" destination="9Kg-pr-wJT" eventType="valueChanged" id="hGn-IR-ugG"/>
+                                                    </connections>
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SJg-7a-cUd" userLabel="Text Field 3">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
@@ -103,6 +114,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="eVX-1k-f8e" secondAttribute="bottom" constant="6" id="qx6-gQ-Qp9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="pZb-2M-LFE" userLabel="Subreddit Cell 4">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -112,6 +124,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gMc-ZS-DmU" userLabel="Switch 4">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchFour:" destination="9Kg-pr-wJT" eventType="valueChanged" id="aLh-gC-dZd"/>
+                                                    </connections>
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8CH-kl-pVV" userLabel="Text Field 4">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
@@ -129,6 +144,7 @@
                                                 <constraint firstItem="gMc-ZS-DmU" firstAttribute="top" secondItem="gsZ-9Y-daw" secondAttribute="topMargin" constant="5" id="yEY-gh-Aj2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="oef-JV-If5" userLabel="Subreddit Cell 5">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -138,6 +154,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-B8-DXq" userLabel="Switch 5">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="switchFive:" destination="9Kg-pr-wJT" eventType="valueChanged" id="rY7-7A-tmR"/>
+                                                    </connections>
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eS5-q4-wAV" userLabel="Text Field 5">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
@@ -155,6 +174,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="NsG-B8-DXq" secondAttribute="bottom" constant="6" id="tSe-G4-KDO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -167,11 +187,12 @@
                     <navigationItem key="navigationItem" title="Reddit NC" id="30f-8A-MZW">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="FDT-RO-wH7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="savePressed:" destination="9Kg-pr-wJT" id="pQC-Gf-jKu"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="inputFields" destination="eS5-q4-wAV" id="l1R-nM-NV0"/>
-                        <outlet property="subredditInputFields" destination="eS5-q4-wAV" id="QhJ-8f-5vb"/>
                         <outletCollection property="subredditTableViewCells" destination="yOw-kC-2cl" collectionClass="NSMutableArray" id="bbX-oQ-1Rt"/>
                         <outletCollection property="subredditTableViewCells" destination="lGH-pR-c5i" collectionClass="NSMutableArray" id="nhC-he-5Kc"/>
                         <outletCollection property="subredditTableViewCells" destination="BGy-Ci-cX4" collectionClass="NSMutableArray" id="uLA-4I-3RN"/>
@@ -182,6 +203,11 @@
                         <outletCollection property="subredditUISwitches" destination="eVX-1k-f8e" collectionClass="NSMutableArray" id="wOc-i9-rs5"/>
                         <outletCollection property="subredditUISwitches" destination="gMc-ZS-DmU" collectionClass="NSMutableArray" id="b5l-FZ-aM1"/>
                         <outletCollection property="subredditUISwitches" destination="NsG-B8-DXq" collectionClass="NSMutableArray" id="Plo-f3-GXl"/>
+                        <outletCollection property="subredditInputFields" destination="yvd-9o-pk6" collectionClass="NSMutableArray" id="38z-Hv-KFB"/>
+                        <outletCollection property="subredditInputFields" destination="n4i-4v-Qzu" collectionClass="NSMutableArray" id="tgN-v9-qL4"/>
+                        <outletCollection property="subredditInputFields" destination="SJg-7a-cUd" collectionClass="NSMutableArray" id="2ao-Jv-7cN"/>
+                        <outletCollection property="subredditInputFields" destination="8CH-kl-pVV" collectionClass="NSMutableArray" id="cV4-Jm-AYq"/>
+                        <outletCollection property="subredditInputFields" destination="eS5-q4-wAV" collectionClass="NSMutableArray" id="bnK-Go-hnA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIZ-61-xvD" userLabel="First Responder" sceneMemberID="firstResponder"/>

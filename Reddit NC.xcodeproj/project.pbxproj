@@ -36,6 +36,7 @@
 		527A9E501B34C91D0095BCD4 /* Reddit NCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddit NCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527A9E551B34C91D0095BCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527A9E561B34C91D0095BCD4 /* Reddit_NCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit_NCTests.swift; sourceTree = "<group>"; };
+		52EF9A341B34DD8500EA3059 /* Reddit NC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Reddit NC.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		527A9E3D1B34C91D0095BCD4 /* Reddit NC */ = {
 			isa = PBXGroup;
 			children = (
+				52EF9A341B34DD8500EA3059 /* Reddit NC.entitlements */,
 				527A9E401B34C91D0095BCD4 /* AppDelegate.swift */,
 				527A9E421B34C91D0095BCD4 /* MainViewController.swift */,
 				527A9E441B34C91D0095BCD4 /* Main.storyboard */,
@@ -161,6 +163,12 @@
 				TargetAttributes = {
 					527A9E3A1B34C91D0095BCD4 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = JRS59Q3JZW;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					527A9E4F1B34C91D0095BCD4 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -342,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Reddit NC/Reddit NC.entitlements";
 				INFOPLIST_FILE = "Reddit NC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Reddit NC/Reddit NC.entitlements";
 				INFOPLIST_FILE = "Reddit NC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
