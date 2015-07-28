@@ -13,6 +13,10 @@
 		527A9E481B34C91D0095BCD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E471B34C91D0095BCD4 /* Images.xcassets */; };
 		527A9E4B1B34C91D0095BCD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E491B34C91D0095BCD4 /* LaunchScreen.xib */; };
 		527A9E571B34C91D0095BCD4 /* Reddit_NCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A9E561B34C91D0095BCD4 /* Reddit_NCTests.swift */; };
+		529BB6671B682AB400385D9E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529BB6661B682AB400385D9E /* NotificationCenter.framework */; };
+		529BB66C1B682AB400385D9E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529BB66B1B682AB400385D9E /* TodayViewController.swift */; };
+		529BB66E1B682AB400385D9E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529BB66D1B682AB400385D9E /* MainInterface.storyboard */; };
+		529BB6711B682AB400385D9E /* Reddit NC Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 529BB6641B682AB400385D9E /* Reddit NC Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +27,28 @@
 			remoteGlobalIDString = 527A9E3A1B34C91D0095BCD4;
 			remoteInfo = "Reddit NC";
 		};
+		529BB66F1B682AB400385D9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 527A9E331B34C91D0095BCD4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 529BB6631B682AB400385D9E;
+			remoteInfo = "Reddit NC Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		529BB6751B682AB400385D9E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				529BB6711B682AB400385D9E /* Reddit NC Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		527A9E3B1B34C91D0095BCD4 /* Reddit NC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit NC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +61,11 @@
 		527A9E501B34C91D0095BCD4 /* Reddit NCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddit NCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527A9E551B34C91D0095BCD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		527A9E561B34C91D0095BCD4 /* Reddit_NCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit_NCTests.swift; sourceTree = "<group>"; };
+		529BB6641B682AB400385D9E /* Reddit NC Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Reddit NC Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		529BB6661B682AB400385D9E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		529BB66A1B682AB400385D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529BB66B1B682AB400385D9E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		529BB66D1B682AB400385D9E /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		52EF9A341B34DD8500EA3059 /* Reddit NC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Reddit NC.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +84,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		529BB6611B682AB400385D9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529BB6671B682AB400385D9E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -62,6 +100,8 @@
 			children = (
 				527A9E3D1B34C91D0095BCD4 /* Reddit NC */,
 				527A9E531B34C91D0095BCD4 /* Reddit NCTests */,
+				529BB6681B682AB400385D9E /* Reddit NC Widget */,
+				529BB6651B682AB400385D9E /* Frameworks */,
 				527A9E3C1B34C91D0095BCD4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +111,7 @@
 			children = (
 				527A9E3B1B34C91D0095BCD4 /* Reddit NC.app */,
 				527A9E501B34C91D0095BCD4 /* Reddit NCTests.xctest */,
+				529BB6641B682AB400385D9E /* Reddit NC Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +155,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		529BB6651B682AB400385D9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				529BB6661B682AB400385D9E /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		529BB6681B682AB400385D9E /* Reddit NC Widget */ = {
+			isa = PBXGroup;
+			children = (
+				529BB66B1B682AB400385D9E /* TodayViewController.swift */,
+				529BB66D1B682AB400385D9E /* MainInterface.storyboard */,
+				529BB6691B682AB400385D9E /* Supporting Files */,
+			);
+			path = "Reddit NC Widget";
+			sourceTree = "<group>";
+		};
+		529BB6691B682AB400385D9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				529BB66A1B682AB400385D9E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,10 +191,12 @@
 				527A9E371B34C91D0095BCD4 /* Sources */,
 				527A9E381B34C91D0095BCD4 /* Frameworks */,
 				527A9E391B34C91D0095BCD4 /* Resources */,
+				529BB6751B682AB400385D9E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				529BB6701B682AB400385D9E /* PBXTargetDependency */,
 			);
 			name = "Reddit NC";
 			productName = "Reddit NC";
@@ -152,6 +221,23 @@
 			productReference = 527A9E501B34C91D0095BCD4 /* Reddit NCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		529BB6631B682AB400385D9E /* Reddit NC Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 529BB6741B682AB400385D9E /* Build configuration list for PBXNativeTarget "Reddit NC Widget" */;
+			buildPhases = (
+				529BB6601B682AB400385D9E /* Sources */,
+				529BB6611B682AB400385D9E /* Frameworks */,
+				529BB6621B682AB400385D9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reddit NC Widget";
+			productName = "Reddit NC Widget";
+			productReference = 529BB6641B682AB400385D9E /* Reddit NC Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +260,10 @@
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 527A9E3A1B34C91D0095BCD4;
 					};
+					529BB6631B682AB400385D9E = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = JRS59Q3JZW;
+					};
 				};
 			};
 			buildConfigurationList = 527A9E361B34C91D0095BCD4 /* Build configuration list for PBXProject "Reddit NC" */;
@@ -191,6 +281,7 @@
 			targets = (
 				527A9E3A1B34C91D0095BCD4 /* Reddit NC */,
 				527A9E4F1B34C91D0095BCD4 /* Reddit NCTests */,
+				529BB6631B682AB400385D9E /* Reddit NC Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -210,6 +301,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529BB6621B682AB400385D9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529BB66E1B682AB400385D9E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +332,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		529BB6601B682AB400385D9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529BB66C1B682AB400385D9E /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +347,11 @@
 			isa = PBXTargetDependency;
 			target = 527A9E3A1B34C91D0095BCD4 /* Reddit NC */;
 			targetProxy = 527A9E511B34C91D0095BCD4 /* PBXContainerItemProxy */;
+		};
+		529BB6701B682AB400385D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 529BB6631B682AB400385D9E /* Reddit NC Widget */;
+			targetProxy = 529BB66F1B682AB400385D9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -402,6 +514,32 @@
 			};
 			name = Release;
 		};
+		529BB6721B682AB400385D9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Reddit NC Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		529BB6731B682AB400385D9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Reddit NC Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,6 +569,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		529BB6741B682AB400385D9E /* Build configuration list for PBXNativeTarget "Reddit NC Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529BB6721B682AB400385D9E /* Debug */,
+				529BB6731B682AB400385D9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

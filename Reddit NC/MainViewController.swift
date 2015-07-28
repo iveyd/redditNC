@@ -162,6 +162,21 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
         
     }
     
+    func packSubreddits(){
+        
+        for i in 0..< self.subredditArray.count{
+            let correctedText: String  = correctedText(self.subredditArray[i])
+            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
+        }
+        
+    }
+    
+    func correctString(subredditName: String)-> String{
+        
+        return subredditName.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+    
+    
     func testSubredditExistance(subredditName: String)->Bool {
         
         var endpoint = NSURL(string: subredditName)

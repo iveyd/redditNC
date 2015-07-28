@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Reddit NC Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Reddit NC.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>527A9E4F1B34C91D0095BCD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>529BB6631B682AB400385D9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
