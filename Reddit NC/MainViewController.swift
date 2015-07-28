@@ -147,13 +147,46 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
             
             //Strip any spaces from the subreddit and convert it to a lowercase string
             let correctedText: String  = self.subredditInputFields[i].text.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            var doesExist:Bool = testSubredditExistance("http://www.reddit.com/r/\(correctedText)/.json")
+            if doesExist{
             //Pack the data into NSDefaults
             self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
+            }
+            else{
+                //Do something else with error handeling.. :/
+                println("ERROR, \(correctedText) does not exists!")
+            }
             
         }
         
         
     }
+    
+    func testSubredditExistance(subredditName: String)->Bool {
+        
+        var endpoint = NSURL(string: subredditName)
+        var data = NSData(contentsOfURL: endpoint!)
+        
+        if data != nil{
+            if let JSON: Dictionary = NSJSONSerialization.JSONObjectWithData(data!, options:
+                NSJSONReadingOptions.MutableContainers, error: nil) as? Dictionary<String, AnyObject>{
+                    
+                    var results:[AnyObject] = JSON["data"]!["children"] as! Array
+                    if results.count == 0{
+                        return false
+                    }
+                    else{
+                        return true
+                    }
+            }
+            return false
+        }
+            
+        else{
+            return false
+        }
+    }
+    
     
     //MARK: Default Functions
     override func viewDidLoad() {
@@ -171,17 +204,4 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
     
     //TODO  I dont like this solution :/ Make something better
     
-//    func testSubredditExistance(subredditName: String) ->Bool{
-//        
-//        
-//        var url = NSURL(string: "http://www.reddit.com/r/\(subredditName)")!// Creating URL
-//        var request:NSMutableURLRequest = NSMutableURLRequest(URL:url)
-//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-//            if let HTTPResponse = response as? NSHTTPURLResponse {
-//                let statusCode = HTTPResponse.statusCode
-//                println(statusCode)
-//            }
-//        }
-//        return true
-//    }
 }
