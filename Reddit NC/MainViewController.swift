@@ -24,6 +24,9 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
     var subredditArray: [String] = []
     
     
+    @IBAction func bPress(sender: AnyObject) {
+        println("Hello")
+    }
     
     //MARK: IBOutletCollections
     
