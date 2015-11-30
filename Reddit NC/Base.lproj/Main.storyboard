@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTH-qc-PsT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTH-qc-PsT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -12,17 +13,21 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="LjZ-fX-MYf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Instructions" id="0uQ-Sn-5Uj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1ev-gy-HfD">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ev-gy-HfD" id="MLW-cE-4Xp">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-xF-J3V">
                                                     <rect key="frame" x="277" y="5" width="46" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -31,19 +36,24 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Subreddit Selection" id="kVN-C4-fxT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="yOw-kC-2cl" userLabel="Subreddit Cell 1">
+                                        <rect key="frame" x="0.0" y="199.5" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOw-kC-2cl" id="BkW-jQ-p6s">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-aF-gpk" userLabel="Switch 1">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <animations/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchOne:" destination="9Kg-pr-wJT" eventType="valueChanged" id="mh9-2b-h1k"/>
@@ -51,10 +61,12 @@
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yvd-9o-pk6" userLabel="Text Field 1">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="tZV-aF-gpk" firstAttribute="trailing" secondItem="BkW-jQ-p6s" secondAttribute="trailingMargin" id="Ge5-s4-LC5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="yvd-9o-pk6" secondAttribute="bottom" constant="6" id="Pdn-N2-MXI"/>
@@ -65,15 +77,19 @@
                                                 <constraint firstItem="tZV-aF-gpk" firstAttribute="leading" secondItem="yvd-9o-pk6" secondAttribute="trailing" constant="22" id="u2x-4U-KHY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.92549019607843142" green="0.92156862745098034" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="lGH-pR-c5i" userLabel="Subreddit Cell 2">
+                                        <rect key="frame" x="0.0" y="258.5" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGH-pR-c5i" id="QFb-5H-plu">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-B3-n3I" userLabel="Switch 2">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <animations/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchTwo:" destination="9Kg-pr-wJT" eventType="valueChanged" id="LxQ-xy-0Dy"/>
@@ -81,10 +97,12 @@
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n4i-4v-Qzu" userLabel="Text Field 2">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="n4i-4v-Qzu" firstAttribute="top" secondItem="QFb-5H-plu" secondAttribute="topMargin" constant="6" id="5FY-HA-ZkF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2Hg-B3-n3I" secondAttribute="bottom" constant="6" id="VM6-dQ-pFu"/>
@@ -95,15 +113,19 @@
                                                 <constraint firstItem="2Hg-B3-n3I" firstAttribute="trailing" secondItem="QFb-5H-plu" secondAttribute="trailingMargin" id="xCz-Ih-GGw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="BGy-Ci-cX4" userLabel="Subreddit Cell 3">
+                                        <rect key="frame" x="0.0" y="317.5" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGy-Ci-cX4" id="Se6-XE-ykD">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eVX-1k-f8e" userLabel="Switch 3">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <animations/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchThree:" destination="9Kg-pr-wJT" eventType="valueChanged" id="hGn-IR-ugG"/>
@@ -111,10 +133,12 @@
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SJg-7a-cUd" userLabel="Text Field 3">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="eVX-1k-f8e" firstAttribute="trailing" secondItem="Se6-XE-ykD" secondAttribute="trailingMargin" id="89F-Nx-xsV"/>
                                                 <constraint firstItem="eVX-1k-f8e" firstAttribute="leading" secondItem="SJg-7a-cUd" secondAttribute="trailing" constant="22" id="E2J-JP-R1j"/>
@@ -125,15 +149,19 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="eVX-1k-f8e" secondAttribute="bottom" constant="6" id="qx6-gQ-Qp9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="pZb-2M-LFE" userLabel="Subreddit Cell 4">
+                                        <rect key="frame" x="0.0" y="376.5" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pZb-2M-LFE" id="gsZ-9Y-daw">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gMc-ZS-DmU" userLabel="Switch 4">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <animations/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchFour:" destination="9Kg-pr-wJT" eventType="valueChanged" id="aLh-gC-dZd"/>
@@ -141,10 +169,12 @@
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8CH-kl-pVV" userLabel="Text Field 4">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8CH-kl-pVV" secondAttribute="bottom" constant="6" id="F1h-18-Rv2"/>
                                                 <constraint firstItem="8CH-kl-pVV" firstAttribute="leading" secondItem="gsZ-9Y-daw" secondAttribute="leadingMargin" id="MfO-rP-5yx"/>
@@ -155,15 +185,19 @@
                                                 <constraint firstItem="gMc-ZS-DmU" firstAttribute="top" secondItem="gsZ-9Y-daw" secondAttribute="topMargin" constant="5" id="yEY-gh-Aj2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="59" id="oef-JV-If5" userLabel="Subreddit Cell 5">
+                                        <rect key="frame" x="0.0" y="435.5" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oef-JV-If5" id="Zau-pY-rpj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="58.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-B8-DXq" userLabel="Switch 5">
                                                     <rect key="frame" x="543" y="13" width="51" height="31"/>
+                                                    <animations/>
                                                     <color key="onTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchFive:" destination="9Kg-pr-wJT" eventType="valueChanged" id="rY7-7A-tmR"/>
@@ -171,10 +205,12 @@
                                                 </switch>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Disabled" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eS5-q4-wAV" userLabel="Text Field 5">
                                                     <rect key="frame" x="8" y="14" width="513" height="30"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="NsG-B8-DXq" firstAttribute="trailing" secondItem="Zau-pY-rpj" secondAttribute="trailingMargin" id="3hG-vc-zKL"/>
                                                 <constraint firstItem="NsG-B8-DXq" firstAttribute="leading" secondItem="eS5-q4-wAV" secondAttribute="trailing" constant="22" id="4jx-8z-TNv"/>
@@ -185,6 +221,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="NsG-B8-DXq" secondAttribute="bottom" constant="6" id="tSe-G4-KDO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
@@ -233,6 +270,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uzu-IB-eiT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="barTintColor" red="0.25347906469999998" green="0.74628549960000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

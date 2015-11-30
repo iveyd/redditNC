@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UITableViewController  {
     
     
     //MARK: Global Variables
@@ -23,9 +23,11 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
     
     var subredditArray: [String] = []
     
+    var packageString:String = ""
+    
     
     @IBAction func bPress(sender: AnyObject) {
-        println("Hello")
+        print("Hello")
     }
     
     //MARK: IBOutletCollections
@@ -136,43 +138,63 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
         
         self.subredditArray.removeAll(keepCapacity: false)
         
+        packageString = ""
+        
         for i in 0..<self.subredditInputFields.count{
             
             //Check to see if user actaully entered in all subreddits he/she turned on
-            if self.subredditInputFields[i].text.isEmpty && self.subredditUISwitches[i].on{
+            if self.subredditInputFields[i].text!.isEmpty && self.subredditUISwitches[i].on{
                 
-                var alert:UIAlertController = UIAlertController(title: "Warning", message: "Invalid subreddit! You must enter a subreddit if the switch for that slot is on!", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert:UIAlertController = UIAlertController(title: "Warning", message: "Invalid subreddit! You must enter a subreddit if the switch for that slot is on!", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 
+                self.subredditUISwitches[i].setOn(false, animated: true)
                 break
             }
-            
-            //Strip any spaces from the subreddit and convert it to a lowercase string
-            let correctedText: String  = self.subredditInputFields[i].text.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            var doesExist:Bool = testSubredditExistance("http://www.reddit.com/r/\(correctedText)/.json")
-            if doesExist{
-            //Pack the data into NSDefaults
-            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
-            }
-            else{
-                //Do something else with error handeling.. :/
-                println("ERROR, \(correctedText) does not exists!")
+            if !self.subredditInputFields[i].text!.isEmpty{
+                
+                
+                //Strip any spaces from the subreddit and convert it to a lowercase string
+                let correctedText: String  = self.subredditInputFields[i].text!.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                print(correctedText)
+                let doesExist:Bool = testSubredditExistance("https://www.reddit.com/r/\(correctedText)/.json")
+                if doesExist{
+                    //Pack the data into NSDefaults
+                    print(i)
+                    //self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
+                    packageString += "\(correctedText)|"
+                }
+                else{
+                    //Do something else with error handeling.. :/
+                    print("ERROR, \(correctedText) does not exists!")
+                }
             }
             
         }
         
+        self.defaults.setObject(packageString, forKey: "subredditList")
         
     }
     
-    func packSubreddits(){
-        
-        for i in 0..< self.subredditArray.count{
-            let correctedText: String  = correctedText(self.subredditArray[i])
-            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
-        }
-        
-    }
+    
+    
+    
+//    func packSubreddits(){
+//        
+//        
+//        for var i = 0;  i <  self.subredditArray.count; i++ {
+//           
+//            let correctedText: String  = correctString(self.subredditArray[i])
+//            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
+//        }
+//        
+//        //        for  i in 0..< subredditArray.count {
+//        //            let correctedText: String  = correctedText(self.subredditArray[i])
+//        //            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
+//        //        }
+//        
+//    }
     
     func correctString(subredditName: String)-> String{
         
@@ -182,14 +204,14 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
     
     func testSubredditExistance(subredditName: String)->Bool {
         
-        var endpoint = NSURL(string: subredditName)
-        var data = NSData(contentsOfURL: endpoint!)
+        let endpoint = NSURL(string: subredditName)
+        let data = NSData(contentsOfURL: endpoint!)
         
         if data != nil{
-            if let JSON: Dictionary = NSJSONSerialization.JSONObjectWithData(data!, options:
-                NSJSONReadingOptions.MutableContainers, error: nil) as? Dictionary<String, AnyObject>{
+            if let JSON: Dictionary = (try? NSJSONSerialization.JSONObjectWithData(data!, options:
+                NSJSONReadingOptions.MutableContainers)) as? Dictionary<String, AnyObject>{
                     
-                    var results:[AnyObject] = JSON["data"]!["children"] as! Array
+                    let results:[AnyObject] = JSON["data"]!["children"] as! Array
                     if results.count == 0{
                         return false
                     }
@@ -206,6 +228,7 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
     }
     
     
+    
     //MARK: Default Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,10 +239,9 @@ class MainViewController: UITableViewController, UITableViewDelegate, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK: Helper Functions
-    
-    
-    //TODO  I dont like this solution :/ Make something better
-    
 }
+//MARK: Helper Functions
+
+
+
+
