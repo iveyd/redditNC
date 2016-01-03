@@ -132,7 +132,7 @@ class MainViewController: UITableViewController  {
     @IBAction func savePressed(sender: UIBarButtonItem) {
         
         let numberOfSubreddits = self.subredditArray.count
-        
+        self.defaults.removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
         //Store how many subreddits the user selects. This is used to control the unpacking for-loop in the NC widget that unpacks the data.
         self.defaults.setObject(numberOfSubreddits, forKey: "numberOfSubreddits")
         

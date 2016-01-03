@@ -9,8 +9,11 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UITableViewController, NCWidgetProviding {
+class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDataSource,NCWidgetProviding {
     
+    
+    
+    @IBOutlet weak var table: UITableView!
     
     
     struct readyPost {
@@ -28,7 +31,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
     let defaults:NSUserDefaults = NSUserDefaults(suiteName: "group.me.johnbehnke.RedditNC")!
     
     func resetContentSize(){
-        self.preferredContentSize = tableView.contentSize
+        self.preferredContentSize = self.table.contentSize
     }
     
     
@@ -41,10 +44,13 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
             subredditList.append(temp)
         }
         
-        self.tableView.reloadData()
         
+       
         super.viewDidLoad()
         resetContentSize()
+        table.delegate = self
+        table.dataSource = self
+        self.table.reloadData()
         // Do any additional setup after loading the view from its nib.
     }
     @IBOutlet weak var test: UILabel!
@@ -137,15 +143,16 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        var test = fetchPostContent()
+        let test = fetchPostContent()
+        print(test)
         print("Hello")
         print(self.finalPostArray.count)
-        self.tableView.reloadData()
+        self.table.reloadData()
         
         completionHandler(NCUpdateResult.NewData)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if self.finalPostArray.count > 0{
             return self.finalPostArray.count
@@ -155,7 +162,7 @@ class TodayViewController: UITableViewController, NCWidgetProviding {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if self.finalPostArray.count > 0{
             
