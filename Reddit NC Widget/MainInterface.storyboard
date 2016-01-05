@@ -18,22 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VRa-kO-Mku">
-                                <rect key="frame" x="0.0" y="51" width="320" height="517"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="5" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="VRa-kO-Mku">
+                                <rect key="frame" x="0.0" y="79" width="320" height="489"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" textLabel="lMN-ec-1qC" style="IBUITableViewCellStyleDefault" id="Iz2-p8-fHH">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="5" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iz2-p8-fHH" id="RvN-3I-kGP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lMN-ec-1qC">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" id="lMN-ec-1qC">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="74"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -45,8 +45,8 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="pPw-Cv-5i2"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-gk-JDf">
-                                <rect key="frame" x="0.0" y="8" width="280" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="GRa-gk-JDf">
+                                <rect key="frame" x="20" y="8" width="280" height="29"/>
                                 <segments>
                                     <segment title="1"/>
                                     <segment title="2"/>
@@ -56,16 +56,24 @@
                                 </segments>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1Z-eY-FNV">
+                                <rect key="frame" x="139" y="44" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="GRa-gk-JDf" secondAttribute="trailing" constant="24" id="4bU-ZQ-tb2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRa-gk-JDf" secondAttribute="trailing" id="4bU-ZQ-tb2"/>
+                            <constraint firstItem="W1Z-eY-FNV" firstAttribute="centerX" secondItem="GRa-gk-JDf" secondAttribute="centerX" id="GQa-EH-wrm"/>
                             <constraint firstItem="VRa-kO-Mku" firstAttribute="leading" secondItem="Z2Z-6v-Sfz" secondAttribute="leading" id="Iel-wD-HWl"/>
                             <constraint firstItem="VRa-kO-Mku" firstAttribute="bottom" secondItem="xvD-02-EcZ" secondAttribute="top" id="Lse-mH-xf7"/>
-                            <constraint firstItem="VRa-kO-Mku" firstAttribute="leading" secondItem="GRa-gk-JDf" secondAttribute="leading" id="MUw-co-EXm"/>
-                            <constraint firstItem="VRa-kO-Mku" firstAttribute="top" secondItem="GRa-gk-JDf" secondAttribute="bottom" constant="15" id="PlM-rI-KCA"/>
+                            <constraint firstItem="VRa-kO-Mku" firstAttribute="leading" secondItem="GRa-gk-JDf" secondAttribute="leading" constant="-20" id="MUw-co-EXm"/>
+                            <constraint firstItem="VRa-kO-Mku" firstAttribute="top" secondItem="GRa-gk-JDf" secondAttribute="bottom" constant="43" id="PlM-rI-KCA"/>
                             <constraint firstItem="GRa-gk-JDf" firstAttribute="top" secondItem="Mts-sl-84Q" secondAttribute="bottom" constant="8" symbolic="YES" id="VpE-t5-OVe"/>
                             <constraint firstAttribute="trailing" secondItem="VRa-kO-Mku" secondAttribute="trailing" id="ZSQ-81-koT"/>
+                            <constraint firstItem="W1Z-eY-FNV" firstAttribute="top" secondItem="GRa-gk-JDf" secondAttribute="bottom" constant="8" symbolic="YES" id="anc-EA-B5w"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

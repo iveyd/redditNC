@@ -31,11 +31,18 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
     let defaults:NSUserDefaults = NSUserDefaults(suiteName: "group.me.johnbehnke.RedditNC")!
     
     func resetContentSize(){
-        self.preferredContentSize = self.table.contentSize
+        self.preferredContentSize.height = self.table.contentSize.height + 75
+        
+    }
+    
+    func widgetMarginInsetsForProposedMarginInsets
+        (defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+            return UIEdgeInsetsZero
     }
     
     
     override func viewDidLoad() {
+        
         let recoveredSubReddits = (defaults.objectForKey("subredditList")) as? String
         
         let tempArray = recoveredSubReddits?.componentsSeparatedByString("|")
@@ -47,10 +54,11 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
         
        
         super.viewDidLoad()
-        resetContentSize()
-        table.delegate = self
-        table.dataSource = self
+        self.table.tableFooterView = UIView(frame: CGRect.zero)
+        self.table.delegate = self
+        self.table.dataSource = self
         self.table.reloadData()
+        resetContentSize()
         // Do any additional setup after loading the view from its nib.
     }
     @IBOutlet weak var test: UILabel!
