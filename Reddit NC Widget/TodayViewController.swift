@@ -9,12 +9,18 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDataSource,NCWidgetProviding {
+
+
+
+
+class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     
     
-    @IBOutlet weak var table: UITableView!
     
+    @IBOutlet var postLabels: [UILabel]!
+    
+    @IBOutlet var postThumbnails: [UIImageView]!
     
     struct readyPost {
         var title:String
@@ -25,15 +31,12 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
     
     
     
+    @IBOutlet weak var test: UISegmentedControl!
     
     var finalPostArray:[readyPost] = []
     var subredditList:[String] = []
     let defaults:NSUserDefaults = NSUserDefaults(suiteName: "group.me.johnbehnke.RedditNC")!
     
-    func resetContentSize(){
-        self.preferredContentSize.height = self.table.contentSize.height + 75
-        
-    }
     
     func widgetMarginInsetsForProposedMarginInsets
         (defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
@@ -54,14 +57,11 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
         
        
         super.viewDidLoad()
-        self.table.tableFooterView = UIView(frame: CGRect.zero)
-        self.table.delegate = self
-        self.table.dataSource = self
-        self.table.reloadData()
-        resetContentSize()
+         updateScreen()
+        self.preferredContentSize = CGSizeMake(0, 700);
         // Do any additional setup after loading the view from its nib.
     }
-    @IBOutlet weak var test: UILabel!
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -78,13 +78,6 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
             let data = NSData(contentsOfURL: endpoint!)
             
             if data != nil{
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 do {
@@ -132,18 +125,13 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
                     return false
                 }
                 
-                
-                
-                
-                
-                
-                
-                
+ 
                 
             }
         }
         return false
     }
+    
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
@@ -155,39 +143,23 @@ class TodayViewController:  UIViewController ,UITableViewDelegate,UITableViewDat
         print(test)
         print("Hello")
         print(self.finalPostArray.count)
-        self.table.reloadData()
         
+        updateScreen()
+        self.preferredContentSize = CGSizeMake(0, 700);
+
         completionHandler(NCUpdateResult.NewData)
     }
     
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if self.finalPostArray.count > 0{
-            return self.finalPostArray.count
-        }
-        else{
-            return 5
-        }
-    }
-    
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        if self.finalPostArray.count > 0{
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("test", forIndexPath: indexPath)
-            
-            cell.textLabel?.text = self.finalPostArray[indexPath.row].title
-            
-            return cell
-        }
-        else{
-            let cell = tableView.dequeueReusableCellWithIdentifier("test", forIndexPath: indexPath)
-            
-            cell.textLabel?.text = "Nothing :("
-            return cell
-            
-            
+    func updateScreen(){
+        if self.finalPostArray.count >= 5{
+            for i in 0..<self.postLabels.count{
+                self.postLabels[i].text = self.finalPostArray[i].title
+                if  self.finalPostArray[i].thumbnail != "self" && self.finalPostArray[i].thumbnail != ""{
+                    
+                    self.postThumbnails[i].image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.finalPostArray[i].thumbnail)!)!)
+                    self.postThumbnails[i].contentMode = .ScaleAspectFit
+                }
+            }
         }
     }
-    
 }

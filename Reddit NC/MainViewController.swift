@@ -180,21 +180,7 @@ class MainViewController: UITableViewController  {
     
     
     
-//    func packSubreddits(){
-//        
-//        
-//        for var i = 0;  i <  self.subredditArray.count; i++ {
-//           
-//            let correctedText: String  = correctString(self.subredditArray[i])
-//            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
-//        }
-//        
-//        //        for  i in 0..< subredditArray.count {
-//        //            let correctedText: String  = correctedText(self.subredditArray[i])
-//        //            self.defaults.setObject(correctedText, forKey: "subreddit\(i)")
-//        //        }
-//        
-//    }
+
     
     func correctString(subredditName: String)-> String{
         
