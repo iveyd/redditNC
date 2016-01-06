@@ -13,5 +13,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "TodayViewController.updateScreen(Bool) -&gt; ():TodayViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "finalPostArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
