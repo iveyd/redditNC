@@ -19,8 +19,9 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     @IBOutlet weak var pageSwitch: UISegmentedControl!
     
+    @IBOutlet var updatedLabel: UILabel!
     @IBOutlet var postComments: [UILabel]!
-    @IBOutlet weak var redditLabel: UILabel!
+    
     @IBAction func switchReddit(sender: UISegmentedControl) {
         updateScreen()
         NCUpdateResult.NewData
@@ -51,8 +52,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     
     
-    
-    
+    var lastUpdate:Double?
     var finalPostArray:[postPage] = []
     var subredditList:[String] = []
     let defaults:NSUserDefaults = NSUserDefaults(suiteName: "group.me.johnbehnke.RedditNC")!
@@ -60,6 +60,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     func widgetMarginInsetsForProposedMarginInsets
         (defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+            
             return UIEdgeInsetsZero
     }
     
@@ -80,6 +81,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
         
         
         self.pageSwitch.selectedSegmentIndex = 0
+        self.lastUpdate = defaults.objectForKey("timeSinceUpdate") as? Double
         super.viewDidLoad()
         updateScreen()
         
@@ -154,6 +156,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
             }
         }
         
+        
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
@@ -162,21 +165,35 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        
-        fetchPostContent()
-        
-        print("Hello")
-        print(self.finalPostArray.count)
-        
-        updateScreen()
-        
-        
-        completionHandler(NCUpdateResult.NewData)
+        //let updatedNow  = NSTimeIntervalSince1970
+        ///self.lastUpdate = (defaults.objectForKey("timeSinceUpdate")) as? Double
+        //if updatedNow - self.lastUpdate! != 0{
+            //self.defaults.setObject(updatedNow, forKey: "timeSinceUpdate")
+            //self.updatedLabel.text = "\(updatedNow - self.lastUpdate!)"
+            //updateScreen()
+            
+            //completionHandler(NCUpdateResult.NewData)
+        //}
+        //else{
+            //self.defaults.setObject(updatedNow, forKey: "timeSinceUpdate")
+
+            fetchPostContent()
+            
+            
+            print(self.finalPostArray.count)
+            
+            updateScreen()
+            
+            
+            completionHandler(NCUpdateResult.NewData)
+       //}
     }
     
     func updateScreen(){
         if self.finalPostArray.count >= 1{
             
+            
+            //self.updatedLabel.text = "\((updatedNow - self.lastUpdate!))"
             var pageNumber = self.pageSwitch.selectedSegmentIndex
             if pageNumber == -1{
                 pageNumber = 0
@@ -193,7 +210,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
                     self.postThumbnails[i].image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.finalPostArray[pageNumber].posts[i].thumbnail)!)!)
                     self.postThumbnails[i].contentMode = .ScaleAspectFit
                     self.postLabels[i].hidden = false
-                     self.postLabelsNonImage[i].hidden = true
+                    self.postLabelsNonImage[i].hidden = true
                     self.postLabels[i].text = self.finalPostArray[pageNumber].posts[i].title
                 }
                 else{

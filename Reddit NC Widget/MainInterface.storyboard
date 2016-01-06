@@ -30,12 +30,6 @@
                                     <action selector="switchReddit:" destination="ZNu-cb-nfW" eventType="valueChanged" id="i5i-r1-c7j"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-nJ-wqo" userLabel="Post 1 Image">
-                                <rect key="frame" x="20" y="63" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="lQF-6V-yaZ"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GId-w6-806" userLabel="Post 2 Image">
                                 <rect key="frame" x="20" y="116" width="45" height="45"/>
                             </imageView>
@@ -214,22 +208,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="3Nj-QB-aba" userLabel="Post 4 Upvote Image">
-                                <rect key="frame" x="257" y="232" width="10" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="NEY-L0-MtS"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Oyd-L7-yNr"/>
-                                    <constraint firstAttribute="width" constant="10" id="rCh-Yh-Mqr"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="exe-wu-f6i" userLabel="Post 4 Upvote Image">
-                                <rect key="frame" x="257" y="285" width="10" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="JxU-Z4-prR"/>
-                                    <constraint firstAttribute="width" constant="10" id="nNn-9f-X0G"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="wWQ-mx-gPb"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="F6O-yO-lRa" userLabel="Post 1 Upvote Image">
                                 <rect key="frame" x="257" y="68" width="10" height="10"/>
                                 <constraints>
@@ -253,6 +231,37 @@
                                     <constraint firstAttribute="height" constant="10" id="5Iz-dq-22C"/>
                                     <constraint firstAttribute="width" constant="10" id="gJr-vl-lW6"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="u2D-UX-YAk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="3Nj-QB-aba" userLabel="Post 4 Upvote Image">
+                                <rect key="frame" x="257" y="232" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="NEY-L0-MtS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Oyd-L7-yNr"/>
+                                    <constraint firstAttribute="width" constant="10" id="rCh-Yh-Mqr"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upvote" translatesAutoresizingMaskIntoConstraints="NO" id="exe-wu-f6i" userLabel="Post 4 Upvote Image">
+                                <rect key="frame" x="257" y="285" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="JxU-Z4-prR"/>
+                                    <constraint firstAttribute="width" constant="10" id="nNn-9f-X0G"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="wWQ-mx-gPb"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RJ-Ee-naA">
+                                <rect key="frame" x="139" y="44" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="T3Z-FM-w8l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.58039215690000001" green="0.58039215690000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bUf-nJ-wqo" userLabel="Post 1 Image">
+                                <rect key="frame" x="20" y="63" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="lQF-6V-yaZ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -330,9 +339,11 @@
                             <constraint firstItem="vtO-Hx-wAR" firstAttribute="leading" secondItem="dld-MG-jDR" secondAttribute="leading" id="UmG-Fy-7UF"/>
                             <constraint firstItem="Qt9-6l-DjK" firstAttribute="leading" secondItem="hkS-fU-5zZ" secondAttribute="leading" id="V3h-Mq-VbB"/>
                             <constraint firstItem="V1V-gd-8eM" firstAttribute="trailing" secondItem="3Nj-QB-aba" secondAttribute="trailing" id="VEn-Jd-u1C"/>
+                            <constraint firstItem="3RJ-Ee-naA" firstAttribute="top" secondItem="akf-QP-cKE" secondAttribute="bottom" constant="8" symbolic="YES" id="Ven-b4-4lK"/>
                             <constraint firstItem="CHg-uh-M6t" firstAttribute="top" secondItem="Mit-iz-uq7" secondAttribute="bottom" constant="11" id="Vw0-K4-clU"/>
                             <constraint firstItem="akf-QP-cKE" firstAttribute="leading" secondItem="RfC-ji-uVj" secondAttribute="leading" id="WIZ-9Z-Z3V"/>
                             <constraint firstItem="d7A-W5-bq8" firstAttribute="leading" secondItem="1aY-Yz-Cw5" secondAttribute="leading" id="Wic-YF-s71"/>
+                            <constraint firstItem="1aY-Yz-Cw5" firstAttribute="top" secondItem="3RJ-Ee-naA" secondAttribute="bottom" constant="51" id="Xcy-cz-yOl"/>
                             <constraint firstItem="15L-f9-8HG" firstAttribute="centerY" secondItem="3Nj-QB-aba" secondAttribute="centerY" id="XrY-SW-Nvo"/>
                             <constraint firstItem="PWy-MW-L5F" firstAttribute="top" secondItem="Oeh-lL-dBw" secondAttribute="bottom" id="Y8U-qZ-J95"/>
                             <constraint firstItem="hkS-fU-5zZ" firstAttribute="top" secondItem="eZV-fA-BDE" secondAttribute="top" id="ZBx-Tx-nF8"/>
@@ -340,6 +351,7 @@
                             <constraint firstItem="vtO-Hx-wAR" firstAttribute="top" secondItem="F6O-yO-lRa" secondAttribute="bottom" constant="13" id="aAN-YL-fTl"/>
                             <constraint firstItem="dld-MG-jDR" firstAttribute="leading" secondItem="1aY-Yz-Cw5" secondAttribute="trailing" constant="8" symbolic="YES" id="aql-cg-Wup"/>
                             <constraint firstItem="2f8-yr-boZ" firstAttribute="leading" secondItem="o94-gm-3Ti" secondAttribute="leading" id="bAP-el-rhq"/>
+                            <constraint firstItem="3RJ-Ee-naA" firstAttribute="centerX" secondItem="akf-QP-cKE" secondAttribute="centerX" id="bN7-9N-cR8"/>
                             <constraint firstItem="V1V-gd-8eM" firstAttribute="centerY" secondItem="dt7-xJ-MOa" secondAttribute="centerY" id="cER-Vo-zGW"/>
                             <constraint firstItem="exe-wu-f6i" firstAttribute="top" secondItem="1Df-9T-91n" secondAttribute="bottom" constant="22" id="d9Y-Ga-l24"/>
                             <constraint firstItem="PWy-MW-L5F" firstAttribute="baseline" secondItem="RfC-ji-uVj" secondAttribute="baseline" id="dAI-Sk-rgy"/>
@@ -396,6 +408,7 @@
                     <size key="freeformSize" width="320" height="341"/>
                     <connections>
                         <outlet property="pageSwitch" destination="akf-QP-cKE" id="2Jm-Va-vhF"/>
+                        <outlet property="updatedLabel" destination="3RJ-Ee-naA" id="tt4-jZ-7wt"/>
                         <outletCollection property="postThumbnails" destination="bUf-nJ-wqo" collectionClass="NSMutableArray" id="bw7-En-NGf"/>
                         <outletCollection property="postThumbnails" destination="GId-w6-806" collectionClass="NSMutableArray" id="XmI-ht-ZiJ"/>
                         <outletCollection property="postThumbnails" destination="CHg-uh-M6t" collectionClass="NSMutableArray" id="cJK-Ve-95R"/>
