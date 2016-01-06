@@ -17,6 +17,7 @@
 		529BB66C1B682AB400385D9E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529BB66B1B682AB400385D9E /* TodayViewController.swift */; };
 		529BB66E1B682AB400385D9E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529BB66D1B682AB400385D9E /* MainInterface.storyboard */; };
 		529BB6711B682AB400385D9E /* Reddit NC Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 529BB6641B682AB400385D9E /* Reddit NC Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52E7BAA81C3CA93C00E1AB23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527A9E471B34C91D0095BCD4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +125,8 @@
 				527A9E401B34C91D0095BCD4 /* AppDelegate.swift */,
 				527A9E421B34C91D0095BCD4 /* MainViewController.swift */,
 				527A9E441B34C91D0095BCD4 /* Main.storyboard */,
-				527A9E471B34C91D0095BCD4 /* Images.xcassets */,
 				527A9E491B34C91D0095BCD4 /* LaunchScreen.xib */,
+				527A9E471B34C91D0095BCD4 /* Images.xcassets */,
 				527A9E3E1B34C91D0095BCD4 /* Supporting Files */,
 			);
 			path = "Reddit NC";
@@ -318,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529BB66E1B682AB400385D9E /* MainInterface.storyboard in Resources */,
+				52E7BAA81C3CA93C00E1AB23 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

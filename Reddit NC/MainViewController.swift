@@ -26,9 +26,6 @@ class MainViewController: UITableViewController  {
     var packageString:String = ""
     
     
-    @IBAction func bPress(sender: AnyObject) {
-        print("Hello")
-    }
     
     //MARK: IBOutletCollections
     
@@ -180,7 +177,7 @@ class MainViewController: UITableViewController  {
     
     
     
-
+    
     
     func correctString(subredditName: String)-> String{
         
@@ -213,11 +210,39 @@ class MainViewController: UITableViewController  {
         }
     }
     
-    
+    func updateFields(){
+        
+        for i in 0..<self.subredditArray.count{
+            
+            self.subredditInputFields[i].text = self.subredditArray[i]
+            self.subredditInputFields[i].userInteractionEnabled = true
+            self.subredditUISwitches[i].on = true
+            self.subredditInputFields[i].textColor = UIColor.blackColor()
+            self.subredditTableViewCells[i].backgroundColor = UIColor.whiteColor()
+            
+        }
+    }
     
     //MARK: Default Functions
     override func viewDidLoad() {
+        
+        //var savedSubReddits:[String] = []
+        let recoveredSubReddits = (defaults.objectForKey("subredditList")) as? String
+        
+        if recoveredSubReddits != nil{
+            let tempArray = recoveredSubReddits?.componentsSeparatedByString("|")
+            let tempArray2 = tempArray?.dropLast()
+            for temp in tempArray2!{
+                self.subredditArray.append(temp)
+            }
+        }
+        
+        updateFields()
+        
+        
+        
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -17,23 +17,43 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     
     
+    @IBOutlet weak var pageSwitch: UISegmentedControl!
     
+    @IBOutlet var postComments: [UILabel]!
+    @IBOutlet weak var redditLabel: UILabel!
+    @IBAction func switchReddit(sender: UISegmentedControl) {
+        updateScreen()
+        NCUpdateResult.NewData
+        
+    }
+    
+    @IBOutlet var postUpVotes: [UILabel]!
     @IBOutlet var postLabels: [UILabel]!
+    
+    @IBOutlet var postLabelsNonImage: [UILabel]!
     
     @IBOutlet var postThumbnails: [UIImageView]!
     
     struct readyPost {
         var title:String
         var thumbnail:String
-        var subredditName:String
+        var ups: Int
+        var num_comments: Int
         
+        
+        
+    }
+    
+    struct postPage {
+        var subredditName:String
+        var posts:[readyPost]
     }
     
     
     
-    @IBOutlet weak var test: UISegmentedControl!
     
-    var finalPostArray:[readyPost] = []
+    
+    var finalPostArray:[postPage] = []
     var subredditList:[String] = []
     let defaults:NSUserDefaults = NSUserDefaults(suiteName: "group.me.johnbehnke.RedditNC")!
     
@@ -51,14 +71,18 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
         let tempArray = recoveredSubReddits?.componentsSeparatedByString("|")
         let tempArray2 = tempArray?.dropLast()
         for temp in tempArray2!{
-            subredditList.append(temp)
+            self.subredditList.append(temp)
+        }
+        self.pageSwitch.removeAllSegments()
+        for i in 0..<self.subredditList.count{
+            self.pageSwitch.insertSegmentWithTitle("\(self.subredditList[i])", atIndex: i, animated: true)
         }
         
         
-       
+        self.pageSwitch.selectedSegmentIndex = 0
         super.viewDidLoad()
-         updateScreen()
-        self.preferredContentSize = CGSizeMake(0, 700);
+        updateScreen()
+        
         // Do any additional setup after loading the view from its nib.
     }
     
@@ -70,7 +94,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     
     
-    func fetchPostContent() -> Bool{
+    func fetchPostContent() {
         
         for post in self.subredditList{
             
@@ -95,7 +119,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
                                 stickySkip++
                             }
                         }
-                        
+                        var tempPushArray:[readyPost] = []
                         for (var i = 0; i < (5 + stickySkip); i++){
                             let redditJSON: Dictionary<String,AnyObject> = results[i] as! Dictionary
                             let isSticky:Bool = redditJSON["data"]!["stickied"] as! Bool
@@ -105,31 +129,31 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
                             else{
                                 let tempPostTitle = redditJSON["data"]!["title"] as? String
                                 let tempPostImageURL = redditJSON["data"]!["thumbnail"] as? String
+                                let tempPostUps = redditJSON["data"]!["ups"] as? Int
+                                let tempPostComments = redditJSON["data"]!["num_comments"] as? Int
+                                let tempStruct = readyPost(title: tempPostTitle!, thumbnail: tempPostImageURL!, ups: tempPostUps!, num_comments: tempPostComments!)
                                 
-                                let tempStruct = readyPost(title: tempPostTitle!, thumbnail: tempPostImageURL!, subredditName: post)
-                                
-                                self.finalPostArray.append(tempStruct)
+                                tempPushArray.append(tempStruct)
                                 
                             }
                             
-                            
-                            
                         }
-                        return true
+                        self.finalPostArray.append(postPage(subredditName: post, posts: tempPushArray))
+                        
                         
                         
                         
                     }
+                    
                 } catch {
                     print("error serializing JSON: \(error)")
-                    return false
                 }
                 
- 
+                
                 
             }
         }
-        return false
+        
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
@@ -139,25 +163,46 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        let test = fetchPostContent()
-        print(test)
+        fetchPostContent()
+        
         print("Hello")
         print(self.finalPostArray.count)
         
         updateScreen()
-        self.preferredContentSize = CGSizeMake(0, 700);
-
+        
+        
         completionHandler(NCUpdateResult.NewData)
     }
     
     func updateScreen(){
-        if self.finalPostArray.count >= 5{
-            for i in 0..<self.postLabels.count{
-                self.postLabels[i].text = self.finalPostArray[i].title
-                if  self.finalPostArray[i].thumbnail != "self" && self.finalPostArray[i].thumbnail != ""{
+        if self.finalPostArray.count >= 1{
+            
+            var pageNumber = self.pageSwitch.selectedSegmentIndex
+            if pageNumber == -1{
+                pageNumber = 0
+            }
+            
+            
+            for i in 0..<5{
+                
+                self.postUpVotes[i].text = "\(self.finalPostArray[pageNumber].posts[i].ups)"
+                self.postComments[i].text = "\(self.finalPostArray[pageNumber].posts[i].num_comments)"
+                
+                if  self.finalPostArray[pageNumber].posts[i].thumbnail != "self" && self.finalPostArray[pageNumber].posts[i].thumbnail != "" &&   self.finalPostArray[pageNumber].posts[i].thumbnail != "nsfw" {
                     
-                    self.postThumbnails[i].image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.finalPostArray[i].thumbnail)!)!)
+                    self.postThumbnails[i].image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.finalPostArray[pageNumber].posts[i].thumbnail)!)!)
                     self.postThumbnails[i].contentMode = .ScaleAspectFit
+                    self.postLabels[i].hidden = false
+                     self.postLabelsNonImage[i].hidden = true
+                    self.postLabels[i].text = self.finalPostArray[pageNumber].posts[i].title
+                }
+                else{
+                    self.postThumbnails[i].image = nil
+                    self.postLabels[i].hidden = true
+                    self.postLabelsNonImage[i].hidden = false
+                    self.postLabelsNonImage[i].text = self.finalPostArray[pageNumber].posts[i].title
+                    
+                    
                 }
             }
         }
