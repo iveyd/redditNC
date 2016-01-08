@@ -40,5 +40,6 @@ When the widget loads, it pulls the subreddits out of NSDefualts, and it tries t
 As you can see, its fairly simple, just kinda annoying at times. 
 
 #Other
-##If you are still reading at this point, thanks! 🍻 If you have any questions, feel free to contact me on GitHub. Or you can be super cool and make some pull-requests or what not.
+---
+If you are still reading at this point, thanks! 🍻 If you have any questions, feel free to contact me on GitHub. Or you can be super cool and make some pull-requests or what not.
   
