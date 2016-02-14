@@ -25,6 +25,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     
     @IBAction func switchReddit(sender: UISegmentedControl) {
         updateScreen(true)
+        self.defaults.setObject(self.pageSwitch.selectedSegmentIndex, forKey: "lastSelectedSubreddit")
         NCUpdateResult.NewData
         
     }
@@ -69,6 +70,7 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
     override func viewDidLoad() {
         
         let recoveredSubReddits = (defaults.objectForKey("subredditList")) as? String
+        
         if recoveredSubReddits != nil{
             let tempArray = recoveredSubReddits?.componentsSeparatedByString("|")
             let tempArray2 = tempArray?.dropLast()
@@ -80,13 +82,20 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
                 self.pageSwitch.insertSegmentWithTitle("\(self.subredditList[i])", atIndex: i, animated: true)
             }
             
+            let lastSelected = defaults.objectForKey("lastSelectedSubreddit") as? Int
             
-            self.pageSwitch.selectedSegmentIndex = 0
-            self.lastUpdate = defaults.objectForKey("timeSinceUpdate") as? Double
+            if lastSelected == nil{
+                self.pageSwitch.selectedSegmentIndex = 0
+            }
+            else{
+            
+            self.pageSwitch.selectedSegmentIndex = ((defaults.objectForKey("lastSelectedSubreddit")) as? Int)!
+            }
+           
         }
         super.viewDidLoad()
         
-        updateScreen(false)
+        //updateScreen(false)
         // Do any additional setup after loading the view from its nib.
     }
     
@@ -238,18 +247,18 @@ class TodayViewController:  UIViewController ,NCWidgetProviding {
             }
         }
         else{
-            self.pageSwitch.hidden = true
-            self.connectionStatusLabel.hidden = false
-            self.connectionStatusLabel.text = "Error! Check your Internet connection :("
-            
-            for i in 0..<5{
-                self.postLabels[i].hidden = true
-                self.postThumbnails[i].hidden = true
-                self.postComments[i].hidden = true
-                self.postUpVotes[i].hidden = true
-            }
-            
-            self.preferredContentSize = CGSizeMake(0, 50);
+//            self.pageSwitch.hidden = true
+//            self.connectionStatusLabel.hidden = false
+//            self.connectionStatusLabel.text = "Error! Check your Internet connection :("
+//            
+//            for i in 0..<5{
+//                self.postLabels[i].hidden = true
+//                self.postThumbnails[i].hidden = true
+//                self.postComments[i].hidden = true
+//                self.postUpVotes[i].hidden = true
+//            }
+//            
+//            self.preferredContentSize = CGSizeMake(0, 50);
         }
     }
 }
